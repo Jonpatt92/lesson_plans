@@ -325,9 +325,17 @@ id |         name         | revenue | season_id
  7 | arugula salad        |    1100 |         2
 (5 rows)
 ```
-
+Answer 
+```sql
+SELECT * FROM items WHERE revenue > (SELECT avg(revenue) FROM items);
+```
 
 1. Without looking at the previous solution, write a `WHERE` clause that returns the items that have a revenue less than the average revenue.
+
+Answer
+```sql
+SELECT * fROM items WHERE revenue < (SELECT avg(revenue) FROM items);
+```
 
 ### Additional Challenges
 
