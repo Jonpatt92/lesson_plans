@@ -181,7 +181,10 @@ lobster mac n cheese | winter
 grilled cheese       | spring
 (7 rows)
 ```
-`SELECT items.name AS item_name, seasons.name AS season_name FROM items INNER JOIN seasons ON items.season_id = seasons.id;`
+* Answer
+```sql
+SELECT items.name AS item_name, seasons.name AS season_name FROM items INNER JOIN seasons ON items.season_id = seasons.id;
+```
 
 Now let's combine multiple `INNER JOIN`s to pull data from three tables `items`, `categories` and `item_categories`.
 
@@ -199,8 +202,7 @@ arugula salad | lunch
 arugula salad | vegetarian
 (4 rows)
 ```
-*Answer
-
+* Answer
 ```sql
 SELECT items.name, categories.name FROM items INNER JOIN item_categories ON items.id = item_categories.item_id
 INNER JOIN categories ON item_categories.category_id = categories.id WHERE items.id = 7;
@@ -217,8 +219,7 @@ arugula salad | lunch
 arugula salad | vegetarian
 (4 rows)
 ```
-*Answer
-
+* Answer
 ```sql
 SELECT items.name AS item_name, categories.name AS category_name FROM items 
 INNER JOIN item_categories ON items.id = item_categories.item_id
